@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" version="24.7.7" type="device">
+  <diagram name="Arquitectura_S3" id="arq-s3">
+    <mxGraphModel dx="1420" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo" value="Arquitectura del Sistema de Ventas - Ingenieria Inversa (Semana 3)" style="text;html=1;align=center;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="20" width="920" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitulo" value="Obtenida a partir del codigo fuente existente: src/app, src/service, src/repository, src/model, src/util" style="text;html=1;align=center;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="120" y="50" width="920" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="capaApp" value="CAPA DE APLICACION (src/app)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6C8EBF;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#3B5A80;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="90" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="main" value="Main&#10;main(String[] args)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="320" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="capaSrv" value="CAPA DE SERVICIOS - Logica de negocio (src/service)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82B366;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#4C7A34;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="1000" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="srv1" value="ClienteService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="275" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="srv2" value="ProductoService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="275" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="srv3" value="VentaService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="275" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="srv4" value="ReporteService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="815" y="275" width="215" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="capaRep" value="CAPA DE REPOSITORIOS - Acceso y persistencia en memoria (src/repository)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D79B00;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#A67500;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="195" y="400" width="770" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rep1" value="ClienteRepository&#10;List&lt;Cliente&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="225" y="435" width="225" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="rep2" value="ProductoRepository&#10;List&lt;Producto&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="467" y="435" width="225" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="rep3" value="VentaRepository&#10;List&lt;Venta&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="709" y="435" width="225" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="capaMod" value="CAPA DE MODELO - Entidades del dominio (src/model)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#9673A6;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#6E5080;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1000" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="mod1" value="Cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="595" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mod2" value="Producto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="595" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mod3" value="Venta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="595" width="215" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mod4" value="VentaDetalle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="815" y="595" width="215" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="capaUtil" value="UTILIDADES (src/util)&#10;&#10;Console&#10;Validaciones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=12;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="240" width="180" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f1" value="1. instancia e invoca" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=12;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="main" target="capaSrv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="2. consulta y persiste" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=12;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="capaSrv" target="capaRep">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="3. almacena y devuelve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=12;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="capaRep" target="capaMod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="usan entidades del dominio" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#82B366;endArrow=open;fontSize=11;fontColor=#4C7A34;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="capaSrv" target="capaMod">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="30" y="295" /><mxPoint x="30" y="615" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f5" value="usan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#999999;endArrow=open;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="capaSrv" target="capaUtil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="VentaService reutiliza ClienteService y ProductoService" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#82B366;endArrow=open;fontSize=10;fontColor=#4C7A34;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="srv3" target="srv1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="687" y="258" /><mxPoint x="217" y="258" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="nota" value="Flujo principal:  Main  =&gt;  Services  =&gt;  Repositories  =&gt;  Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="700" width="400" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

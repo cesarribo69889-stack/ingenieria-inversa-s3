@@ -1,0 +1,12 @@
+*.class
+*.log
+bin/
+out/
+target/
+.idea/
+.vscode/
+.DS_Store
+
+# Temporales de Office y draw.io
+~$*
+.$*.dtmp
