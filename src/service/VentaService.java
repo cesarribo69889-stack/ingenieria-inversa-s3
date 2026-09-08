@@ -9,6 +9,11 @@ import util.Validaciones;
 
 public class VentaService {
 
+    private static final String MSG_SIN_VENTA_ACTIVA = "No hay venta activa";
+    private static final String MSG_CLIENTE_NO_EXISTE = "Cliente no existe";
+    private static final String MSG_PRODUCTO_NO_ENCONTRADO = "Producto no encontrado";
+    private static final String MSG_CANTIDAD_INVALIDA = "Cantidad inválida";
+
     private ClienteService clienteService;
     private ProductoService productoService;
     private VentaRepository ventaRepo;
@@ -21,12 +26,26 @@ public class VentaService {
         this.ventaRepo = ventaRepo;
     }
 
+    // DRY: único punto de salida para los mensajes de error del servicio.
+    private void imprimirError(String msg) {
+        Console.error(msg);
+    }
+
+    // DRY + SRP: la comprobación de "venta activa" vive en un solo lugar.
+    private boolean validarVentaActiva() {
+        if (ventaActual == null) {
+            imprimirError(MSG_SIN_VENTA_ACTIVA);
+            return false;
+        }
+        return true;
+    }
+
     public void crearVenta(String dniCliente) {
 
         Cliente cliente = clienteService.buscarCliente(dniCliente);
 
         if (cliente == null) {
-            Console.error("Cliente no existe");
+            imprimirError(MSG_CLIENTE_NO_EXISTE);
             return;
         }
 
@@ -34,24 +53,21 @@ public class VentaService {
         Console.info("Venta creada para: " + cliente.getNombre());
     }
 
-    // BUG intencional: permite cantidad 0 o negativa por Validaciones
-    // Code smell: repetición de mensajes y validaciones
     public void agregarProductoVenta(int idProducto, int cantidad) {
 
-        if (ventaActual == null) {
-            Console.error("No hay venta activa");
+        if (!validarVentaActiva()) {
             return;
         }
 
         Producto producto = productoService.buscarProducto(idProducto);
 
         if (producto == null) {
-            Console.error("Producto no encontrado");
+            imprimirError(MSG_PRODUCTO_NO_ENCONTRADO);
             return;
         }
 
         if (!Validaciones.validarCantidad(cantidad)) {
-            Console.error("Cantidad inválida");
+            imprimirError(MSG_CANTIDAD_INVALIDA);
             return;
         }
 
@@ -61,8 +77,7 @@ public class VentaService {
 
     public void finalizarVenta() {
 
-        if (ventaActual == null) {
-            Console.error("No hay venta activa");
+        if (!validarVentaActiva()) {
             return;
         }
 
